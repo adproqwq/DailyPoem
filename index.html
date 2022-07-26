@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="utf-8">
+	<title>一诗</title>
+	<style type="text/css">
+		p{
+			font-family:"楷体";
+			font-size:25px;
+		}
+		.button{
+    		background-color: #4CAF50; /* Green */
+			width: 60px;
+    		border: none;
+    		color: white;
+    		padding: 5px 2px;
+    		text-align: center;
+    		text-decoration: none;
+    		display: inline-block;
+    		font-size: 15px;
+    		margin: 4px 2px;
+			border-radius: 12px;
+    		cursor: pointer;
+    		-webkit-transition-duration: 0.4s; /* Safari */
+    		transition-duration: 0.4s;
+		}
+		.button1:hover{
+    		box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+		}
+	</style>
+</head>
+<body>
+	<head>
+		<iframe name="weather_inc" src="http://i.tianqi.com/?c=code&id=7/" width="330" height="83" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+		<p>本页面调用<a href="https://www.jinrishici.com/#">每日诗词</a>API</p>
+	</head>
+	<main>
+		<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+		<div id="poem_sentence"></div>
+		<div id="poem_info"></div>
+		<script type="text/javascript">
+  			jinrishici.load(function(result) {
+    			var sentence = document.querySelector("#poem_sentence")
+    			var info = document.querySelector("#poem_info")
+				shiju=result.data.content
+    			sentence.innerHTML = result.data.content
+				xinxi="——" + result.data.origin.dynasty + '·' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    			info.innerHTML = result.data.origin.dynasty + '·' + result.data.origin.author + '《' + result.data.origin.title + '》'
+  			});
+		</script>
+		<script type="text/javascript">
+			function copy(){
+				var input=document.createElement("input");
+				input.type="text";
+				input.value=shiju + xinxi;
+				document.body.appendChild(input);
+				input.select();
+				document.execCommand("copy");
+				document.body.removeChild(input);
+				alert("已复制到剪切板，请自行粘贴");
+			};
+		</script>
+		<script type="text/javascript">
+			function search(){
+				window.open("https://so.gushiwen.cn/search.aspx?value=" + shiju + "&valuej=" + shiju.substring(0,1));
+			};
+		</script>
+		<script type="text/javascript">
+			function reload(){
+				location.reload()
+			};
+		</script>
+		<input class="button button1" onclick="copy();" value="分享">
+		<input class="button button1" onclick="search();" value="搜索">
+		<input class="button button1" onclick="reload();" value="换一句">
+		<h2>工具箱</h2>
+		<p>
+			<a href="toolbox.html">点击跳转工具箱</a>
+		</p>
+		<h2>更新日志</h2>
+		<p>
+			2022.5.28：网站上线<br>
+			2022.7.25：新增工具：球体积计算器；顶栏添加今日天气；美化按钮样式<br>
+			2022.7.7：新增工具箱，内置工具：格点多边形面积计算器<br>
+			2022.6.5：修改诗句搜索采用的网站为：古诗文网
+		</p>
+	</main>
+</body>
+</html>
