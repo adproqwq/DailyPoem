@@ -3,6 +3,15 @@
 <head>
 	<meta charset="utf-8">
 	<title>一诗</title>
+	<script type="text/javascript">
+		var date=new Date();
+		y=date.getFullYear();
+		m=date.getMonth()+1;
+		if(m<10) m="0" + m;
+		d=date.getDate();
+		if(d<10) d="0" + d;
+	</script>
+	today=y + m + d
 	<style type="text/css">
 		p{
 			font-family:"楷体";
@@ -28,11 +37,11 @@
     		box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 		}
 		body{
-		background-image: url("https://gadpro.github.io/bing/bing.php");
+		background-image: url("https://bing.sunweihu.com/?dir=" + y + "年必应壁纸/" + y + m + "/" + today + ".jpg");
 		}
 	</style>
 </head>
-<body background="https://gadpro.github.io/bing/bing.php">
+<body>
 	<head>
 		<iframe name="weather_inc" src="http://i.tianqi.com/?c=code&id=7/" width="330" height="83" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
 		<p>本页面调用<a href="https://www.jinrishici.com/#">每日诗词</a>API</p>
