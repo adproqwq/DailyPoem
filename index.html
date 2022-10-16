@@ -25,6 +25,22 @@
     		-webkit-transition-duration: 0.4s; /* Safari */
     		transition-duration: 0.4s;
 		}
+                .button2{
+    		background-color: #4CAF50; /* Green */
+			width: 80px;
+    		border: none;
+    		color: white;
+    		padding: 5px 2px;
+    		text-align: center;
+    		text-decoration: none;
+    		display: inline-block;
+    		font-size: 15px;
+    		margin: 4px 2px;
+			border-radius: 12px;
+    		cursor: pointer;
+    		-webkit-transition-duration: 0.4s; /* Safari */
+    		transition-duration: 0.4s;
+		}
 		.button1:hover{
     		box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 		}
@@ -76,13 +92,22 @@
 		<input class="button button1" onclick="copy();" value="分享">
 		<input class="button button1" onclick="search();" value="搜索">
 		<input class="button button1" onclick="reload();" value="换一句">
-		<h2>工具箱</h2>
+		<h2>诗句自助搜索</h2>
+                <script type="text/javascript">
+                        function SearchUserPoem(){
+                                UserPoem=prompt("输入你要查询的诗句");
+                                window.open("https://so.gushiwen.cn/search.aspx?value=" + UserPoem + "&valuej=" + UserPoem.substring(0,1));
+                        };
+                </script>
+                <input class="button2 button1" onclick="SearchUserPoem();" value="输入并搜索">
+                <h2>工具箱</h2>
 		<p>
 			<a href="toolbox/toolbox.html">点击跳转工具箱</a>
 		</p>
 		<h2>更新日志</h2>
 		<p>
 			2022.5.28：网站上线<br>
+                        2022.10.16：新增诗句自助查询<br>
 			2022.7.27：删除顶栏天气；添加网站图标<br>
 			2022.7.25：新增工具：球体积计算器；顶栏添加今日天气；美化按钮样式<br>
 			2022.7.7：新增工具箱，内置工具：格点多边形面积计算器<br>
