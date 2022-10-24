@@ -6,4 +6,4 @@
 1.主站：https://gadpro.github.io<br>
 2.备用站：https://dailyverse.rth1.one/
 # 关于站点
-同一时间更新，主站会比备用站更新慢
+同一时间更新，主站会比备用站更新慢，备用站刷新速度较慢
