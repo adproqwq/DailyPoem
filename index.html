@@ -58,14 +58,16 @@
 		<div id="poem_sentence"></div>
 		<div id="poem_info"></div>
 		<script type="text/javascript">
-  			jinrishici.load(function(result) {
-    			var sentence = document.querySelector("#poem_sentence")
-    			var info = document.querySelector("#poem_info")
-				shiju=result.data.content
-    			sentence.innerHTML = result.data.content
-				xinxi="——" + result.data.origin.dynasty + '·' + result.data.origin.author + '《' + result.data.origin.title + '》'
-    			info.innerHTML = result.data.origin.dynasty + '·' + result.data.origin.author + '《' + result.data.origin.title + '》'
-  			});
+  			function GetData(){
+				jinrishici.load(function(result) {
+    					var sentence = document.querySelector("#poem_sentence")
+    					var info = document.querySelector("#poem_info")
+					shiju=result.data.content
+    					sentence.innerHTML = result.data.content
+					xinxi="——" + result.data.origin.dynasty + '·' + result.data.origin.author + '《' + result.data.origin.title + '》'
+    					info.innerHTML = result.data.origin.dynasty + '·' + result.data.origin.author + '《' + result.data.origin.title + '》'
+  				});
+			};
 		</script>
 		<script type="text/javascript">
 			function copy(){
@@ -91,7 +93,7 @@
 		</script>
 		<input class="button button1" onclick="copy();" value="分享">
 		<input class="button button1" onclick="search();" value="搜索">
-		<input class="button button1" onclick="reload();" value="换一句">
+		<input class="button button1" onclick="GetData();" value="换一句">
 		<h2>诗句自助搜索</h2>
                 <script type="text/javascript">
                         function SearchUserPoem(){
