@@ -3,51 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<title>一诗</title>
-	<link rel="shortcut icon" href="/bitbug_favicon.ico"> 
-	<style type="text/css">
-		p{
-			font-family:"楷体";
-			font-size:25px;
-		}
-		.button{
-    		background-color: #4CAF50; /* Green */
-		width: 60px;
-    		border: none;
-    		color: white;
-    		padding: 5px 2px;
-    		text-align: center;
-    		text-decoration: none;
-    		display: inline-block;
-    		font-size: 15px;
-    		margin: 4px 2px;
-		border-radius: 12px;
-    		cursor: pointer;
-    		-webkit-transition-duration: 0.4s; /* Safari */
-    		transition-duration: 0.4s;
-		}
-                .button2{
-    		background-color: #4CAF50; /* Green */
-		width: 80px;
-    		border: none;
-    		color: white;
-    		padding: 5px 2px;
-    		text-align: center;
-    		text-decoration: none;
-    		display: inline-block;
-    		font-size: 15px;
-    		margin: 4px 2px;
-		border-radius: 12px;
-    		cursor: pointer;
-    		-webkit-transition-duration: 0.4s; /* Safari */
-    		transition-duration: 0.4s;
-		}
-		.button1:hover{
-    		box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
-		}
-		body{
-		background-image: url("bing/bing.php");
-		}
-	</style>
+	<link rel="shortcut icon" href="./bitbug_favicon.ico"> 
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
 	<head>
@@ -90,14 +47,9 @@
 		<input class="button button1" onclick="search();" value="搜索">
 		<input class="button button1" onclick="GetData();" value="换一句">
 		<h2>诗句自助搜索</h2>
-                <script type="text/javascript">
-                        function SearchUserPoem(){
-                                UserPoem=prompt("输入你要查询的诗句");
-                                window.open("https://so.gushiwen.cn/search.aspx?value=" + UserPoem + "&valuej=" + UserPoem.substring(0,1));
-                        };
-                </script>
-                <input class="button2 button1" onclick="SearchUserPoem();" value="输入并搜索">
-                <h2>工具箱</h2>
+        <script type="text/javascript" src="./SearchPoem.js"></script>
+        <input class="button2 button1" onclick="SearchUserPoem();" value="输入并搜索">
+        <h2>工具箱</h2>
 		<p>
 			<a href="toolbox/toolbox.html">点击跳转工具箱</a>
 		</p>
