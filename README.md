@@ -3,7 +3,6 @@
 # 关于网页
 所有网页不存在盗取用户数据代码
 # 站点
-1.主站：https://gadpro.github.io<br>
-2.备用站：https://dailyverse.rth1.one/
-# 关于站点
-同一时间更新，主站会比备用站更新慢，备用站刷新速度较慢
+1.主站：https://gadpro.github.io
+# 公告
+即日起（2022.11.10），备用站下线，不再开启
