@@ -7,12 +7,10 @@ modal.style.display = "block";
 // 点击 <span> (x), 关闭弹窗
 span.onclick = function() {
     modal.style.display = "none";
-    document.write("<script src='./update_modal.js'></script>");
 }
 // 在用户点击其他地方时，关闭弹窗
 window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
-        document.write("<script src='./update_modal.js'></script>");
     }
 }
