@@ -11,13 +11,12 @@
   border-radius: 20px;
   box-sizing: border-box;
   letter-spacing: 3px;
-  z-index: -1;
 }
 .boom {
   background-color: #16a085;
   color: #fff;
   position: relative;
-  z-index: -1;
+  z-index: 1;
 }
 
 .boom::before {
@@ -44,7 +43,7 @@
 .modal {
   display: none; /* 默认隐藏 */
   position: fixed; /* 固定定位 */
-  z-index: 1; /* 设置在顶层 */
+  z-index: 2; /* 设置在顶层 */
   left: 0;
   top: 0;
   width: 100%;
