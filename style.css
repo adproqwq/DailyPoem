@@ -5,37 +5,18 @@ p {
 }
 
 /* 按钮样式 */
-body {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #bdc3c7;
-}
-
-.btn-list {
-  display: grid;
-  grid-template-columns: repeat(3,200px);
-  gap: 50px;
-  background: #fff;
-  border-radius: 20px;
-  padding: 50px;
-  box-shadow: 0 0 5px 5px rgb(0 0 0 / 8%);
-}
-
 .btn {
-  width: 30px;
-  height: 20px;
-  display: flex;
+  width: 120px;
+  height: 40px;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
-  font-size: 2rem;
+  font-size: 20px;
   cursor: pointer;
   user-select: none;
-  letter-spacing: 1rem;
-  text-indent: 1rem;
   border-radius: 20px;
   box-sizing: border-box;
+  letter-spacing: 3px;
 }
 .boom {
   background-color: #16a085;
