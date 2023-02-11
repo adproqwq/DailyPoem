@@ -1,9 +1,3 @@
-/* 文字 */
-p {
-  font-family: "楷体";
-  font-size: 25px;
-}
-
 /* 按钮样式 */
 .btn {
   width: 120px;
@@ -22,7 +16,7 @@ p {
   background-color: #16a085;
   color: #fff;
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .boom::before {
