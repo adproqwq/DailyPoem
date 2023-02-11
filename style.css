@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /* 文字 */
 p {
   font-family: "楷体";
@@ -6,35 +5,63 @@ p {
 }
 
 /* 按钮样式 */
-.button {
-  background: #3498db;
-  width: 180px;
-  padding: 4px 0;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translateX(-50%) translateY(-50%);
-  border-radius: 3px;
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #bdc3c7;
 }
-.button p {
-  text-align: center;
-  text-transform: uppercase;
-  color: #FFF;
-  user-select: none;
+
+.btn-list {
+  display: grid;
+  grid-template-columns: repeat(3,200px);
+  gap: 50px;
+  background: #fff;
+  border-radius: 20px;
+  padding: 50px;
+  box-shadow: 0 0 5px 5px rgb(0 0 0 / 8%);
 }
-.button:hover {
+
+.btn {
+  width: 200px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
   cursor: pointer;
+  user-select: none;
+  letter-spacing: 1rem;
+  text-indent: 1rem;
+  border-radius: 20px;
+  box-sizing: border-box;
 }
-.button:after {
+.boom {
+  background-color: #16a085;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+}
+
+.boom::before {
   content: "";
-  display: block;
   position: absolute;
-  width: 100%;
-  height: 10%;
-  border-radius: 50%;
-  background-color: #927608;
-  opacity: 0.4;
-  bottom: -30px;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border: 2px solid #16a085;
+  border-radius: 20px;
+  transform-origin: center;
+}
+
+.boom:hover::before {
+  transform: scale(1.25);
+  transition: all ease-out .5s;
+  border: 1px solid #96f3e0;
+  opacity: 0;
 }
 
 /* 弹窗样式 */
@@ -74,5 +101,3 @@ p {
   text-decoration: none;
   cursor: pointer;
 }
-
-/*# sourceMappingURL=style.css.map */
