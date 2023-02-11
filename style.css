@@ -12,7 +12,7 @@ p{
     padding: 5px 2px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
+    display: inline;
     font-size: 15px;
     margin: 4px 2px;
     border-radius: 12px;
@@ -28,7 +28,7 @@ p{
     padding: 5px 2px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
+    display: inline;
     font-size: 15px;
     margin: 4px 2px;
     border-radius: 12px;
