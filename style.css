@@ -16,7 +16,7 @@
   background-color: #16a085;
   color: #fff;
   position: relative;
-  z-index: 2;
+  z-index: -1;
 }
 
 .boom::before {
