@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <title>抖音解析</title>
+        <link rel="stylesheet" href="../style.css">
+    </head>
+    <body>
+        <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script>
+            function InputAndAnalysis(){
+                vurl=prompt("请输入视频链接");
+                $.ajax({url:"http://api.tangdouz.com/dy.php?lj=" + vurl + "&return=&yun=tp",success:function(result){
+                    $("#jg").html(result);
+                    }});
+                };
+        </script>
+        <div class="btn boom" onclick="InputAndAnalysis();">输入链接并解析</div>
+        <div id="jg">解析结果会显示在这里</div>
+    </body>
+</html>
