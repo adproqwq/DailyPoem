@@ -14,7 +14,7 @@
 			<span class="close">&times;</span>
 		    <p>
 				如果觉得不错的话请到Github上给本项目点个Star吧!<br><br>
-				2023.2.11：精简“分享”代码；新增一个可关闭弹窗；适配手机页面；删除更新日志；更改按钮样式；修复手机访问弹窗被按钮遮挡的BUG<br>
+				2023.3.29：新增诗句标签，并对应增加快捷复制按钮<br>
 				完整更新日志请到项目查看
 		    </p>
 		</div>
@@ -28,22 +28,33 @@
 		<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
 		<div id="poem_sentence"></div>
 		<div id="poem_info"></div>
+		<div id="poem_tags"></div>
 		<script type="text/javascript">
   			function GetData(){
 				jinrishici.load(function(result) {
     					var sentence = document.querySelector("#poem_sentence")
     					var info = document.querySelector("#poem_info")
-					shiju=result.data.content
+						var tags = document.querySelector("#poem_tags")
+					    shiju = result.data.content
     					sentence.innerHTML = result.data.content
-					xinxi="——" + result.data.origin.dynasty + '·' + result.data.origin.author + '《' + result.data.origin.title + '》'
+					    xinxi = "——" + result.data.origin.dynasty + '·' + result.data.origin.author + '《' + result.data.origin.title + '》'
     					info.innerHTML = result.data.origin.dynasty + '·' + result.data.origin.author + '《' + result.data.origin.title + '》'
+						biaoqian = result.data.matchTags
+						tags.innerHTML = "Tag:" + result.data.matchTags
   				});
 			};
 		</script>
 		<script type="text/javascript">
-			function copy(){
+			function copy_p(){
 				navigator.clipboard.writeText(shiju + xinxi).then(() => {
   					alert('已复制到剪切板，请自行粘贴');
+				});
+			};
+		</script>
+		<script>
+			function copy_t(){
+				navigator.clipboard.writeText(biaoqian).then(() => {
+					alert("已复制到剪切板，请自行粘贴");
 				});
 			};
 		</script>
@@ -52,7 +63,8 @@
 				window.open("https://so.gushiwen.cn/search.aspx?value=" + shiju + "&valuej=" + shiju.substring(0,1));
 			};
 		</script>
-		<div class="btn boom" onclick="copy();">分享</div>
+		<div class="btn boom" onclick="copy_p();">复制诗句</div>
+		<div class="btn boom" onclick="copy_t();">复制标签</div>
 		<div class="btn boom" onclick="search();">搜索</div>
 		<div class="btn boom" onclick="GetData();">换一句</div>
 		<h2>诗句自助搜索</h2>
