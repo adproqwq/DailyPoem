@@ -66,7 +66,17 @@
 		</script>
 		<script>
 			function share(){
-				var Share = new NativeShare()
+				var Share = new NativeShare({
+    				wechatConfig: {
+        				appId: '',
+        				timestamp: '',
+        				nonceStr: '',
+        				signature: '',
+    				},
+  					syncDescToTag: false,
+  					syncIconToTag: false,
+  					syncTitleToTag: false,
+				})
 				Share.setShareData({
 					icon: '',
 					link: 'https://gadpro.tk',
