@@ -25,7 +25,6 @@
 		<p>本页面调用<a href="https://www.jinrishici.com/#">每日诗词</a>API<br>如没有显示诗句，请点击“换一句”</p>
 	</head>
 	<main>
-		<script src="./NativeShare.js" charset="utf-8"></script>
 		<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
 		<div id="poem_sentence"></div>
 		<div id="poem_info"></div>
@@ -64,6 +63,7 @@
 				window.open("https://so.gushiwen.cn/search.aspx?value=" + shiju + "&valuej=" + shiju.substring(0,1));
 			};
 		</script>
+		<script src="./NativeShare.js" charset="utf-8"></script>
 		<script>
 			function share(){
 				var Share = new NativeShare({
@@ -83,7 +83,7 @@
 					title: '分享',
 					desc: shiju + xinxi,
 					from: '@Adpro',
-				});
+				})
 				try {
 					Share.call('default');
 				} catch(err){
