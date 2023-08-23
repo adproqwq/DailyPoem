@@ -19,3 +19,6 @@
 2022.7.25：新增工具：球体积计算器；顶栏添加今日天气；美化按钮样式</br>
 2022.7.7：新增工具箱，内置工具：格点多边形面积计算器</br>
 2022.6.5：修改诗句搜索采用的网站为：古诗文网
+# 特别鸣谢
+1. NativeShare https://github.com/fa-ge/NativeShare
+2. 今日诗词 https://www.jinrishici.com/#
