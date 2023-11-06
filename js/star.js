@@ -9,8 +9,8 @@ function star(poem, poem_info){
         star = {
             stared: [poem + poem_info]
         }
-        self.localStorage.setItem("star",JSON.stringify(star))
-    }
+        self.localStorage.setItem("star",JSON.stringify(star));
+    };
     alert("收藏成功！请到“我的收藏”页面查看");
 };
 
