@@ -13,14 +13,13 @@
 		<div class="modal-content">
 			<span class="close">&times;</span>
 		    <p>
-    2023.8.24：日本罔顾世界人民谴责，一意孤行排放核污染水<br><br>
 				如果觉得不错的话请到Github上给本项目点个Star吧!<br><br>
-				2023.8.21：修改分享模块部分文本<br>
+				2023.11.6：新增收藏模块；优化文件结构<br>
 				完整更新日志请到项目查看
 		    </p>
 		</div>
 	</div>
-	<script type="text/javascript" src="./start_modal.js"></script>
+	<script type="text/javascript" src="./js/start_modal.js"></script>
 	<!--弹窗结束-->
 	<head>
 		<p>
@@ -66,7 +65,7 @@
 				window.open("https://so.gushiwen.cn/search.aspx?value=" + shiju + "&valuej=" + shiju.substring(0,1));
 			};
 		</script>
-		<script src="./NativeShare.js" charset="utf-8"></script>
+		<script src="./js/NativeShare.js" charset="utf-8"></script>
 		<script>
 			function share(){
 				var Share = new NativeShare({
@@ -94,15 +93,19 @@
 				}
 			}
 		</script>
+		<script src="./js/star.js"></script>
 		<div class="btn boom" onclick="copy_p();">复制诗句</div>
 		<div class="btn boom" onclick="copy_t();">复制标签</div>
 		<div class="btn boom" onclick="search();">搜索</div>
 		<div class="btn boom" onclick="GetData();">换一句</div>
 		<div class="btn boom" onclick="share();">分享</div>
+		<div class="btn boom" onclick="star(shiju,xinxi);">收藏</div>
 		<h2>诗句自助搜索</h2>
-        <script type="text/javascript" src="./SearchPoem.js"></script>
+        <script type="text/javascript" src="./js/SearchPoem.js"></script>
         <div class="btn boom" onclick="SearchUserPoem();">输入并搜索</div>
-        <h2>工具箱</h2>
+        <h2>我的收藏</h2>
+		<div class="btn boom" onclick="window.open('./star.html');">我的收藏</div>
+		<h2>工具箱</h2>
 		<a href="./toolbox.html">点击跳转工具箱</a>
 	</main>
 </body>
