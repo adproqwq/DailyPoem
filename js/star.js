@@ -1,17 +1,29 @@
 function star(poem, poem_info){
     var star;
     if(self.localStorage.getItem("star") != null){
+        var flag = 0;
         star = JSON.parse(self.localStorage.getItem("star"));
-        star.stared[star.stared.length] = poem + poem_info;
-        self.localStorage.setItem("star",JSON.stringify(star));
+        for(var i = 0; i < star.stared.length; i++){
+            if(star['stared'][i] == poem + poem_info){
+                alert("该诗句已被收藏");
+                flag = 1;
+                break;
+            }
+        }
+        if(flag == 0){
+            star.stared[star.stared.length] = poem + poem_info;
+            self.localStorage.setItem("star",JSON.stringify(star));
+            alert("收藏成功！请到“我的收藏”页面查看");
+        }
     }
     else{
         star = {
             stared: [poem + poem_info]
         }
         self.localStorage.setItem("star",JSON.stringify(star));
+        alert("收藏成功！请到“我的收藏”页面查看");
     };
-    alert("收藏成功！请到“我的收藏”页面查看");
+    flag = 0;
 };
 
 function removeStared(index){
