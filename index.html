@@ -7,14 +7,14 @@
 	<link rel="shortcut icon" href="./bitbug_favicon.ico"> 
     <link rel="stylesheet" href="./style.css">
 </head>
-<body style="background-color: #E1E0C7;">
+<body>
 	<!--弹窗-->
 	<div id="start" class="modal">
 		<div class="modal-content">
 			<span class="close">&times;</span>
 		    <p>
 				如果觉得不错的话请到Github上给本项目点个Star吧!<br><br>
-				2023.11.15：修改一处事实性文字错误<br>
+				2023.11.16：精简代码；删除工具箱<br>
 				完整更新日志请到项目查看
 		    </p>
 		</div>
@@ -23,10 +23,14 @@
 	<!--弹窗结束-->
 	<head>
 		<p>
-			本页面调用<a href="https://www.jinrishici.com/#">今日诗词</a>API<br>如没有显示诗句，请点击“换一句”<br><br>目前经测试：QQ浏览器、UC浏览器正常，其它浏览器分享都会失败
+			本页面调用<a href="https://www.jinrishici.com/#">今日诗词</a>API<br>
+			如没有显示诗句，请点击“换一句”<br><br>
+			目前经测试：QQ浏览器、UC浏览器正常，其它浏览器分享都会失败
 		</p>
 	</head>
 	<main>
+		<script src="./js/NativeShare.js" charset="utf-8"></script>
+		<script src="./js/star.js"></script>
 		<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
 		<div id="poem_sentence"></div>
 		<div id="poem_info"></div>
@@ -34,39 +38,30 @@
 		<script type="text/javascript">
   			function GetData(){
 				jinrishici.load(function(result) {
-    					var sentence = document.querySelector("#poem_sentence")
-    					var info = document.querySelector("#poem_info")
-						var tags = document.querySelector("#poem_tags")
-					    shiju = result.data.content
-    					sentence.innerHTML = result.data.content
-					    xinxi = "——" + result.data.origin.dynasty + '·' + result.data.origin.author + '《' + result.data.origin.title + '》'
-    					info.innerHTML = result.data.origin.dynasty + '·' + result.data.origin.author + '《' + result.data.origin.title + '》'
-						biaoqian = result.data.matchTags
-						tags.innerHTML = "Tag:" + result.data.matchTags
+    					var sentence = document.querySelector("#poem_sentence");
+    					var info = document.querySelector("#poem_info");
+						var tags = document.querySelector("#poem_tags");
+					    shiju = result.data.content;
+    					sentence.innerHTML = result.data.content;
+					    xinxi = "——" + result.data.origin.dynasty + '·' + result.data.origin.author + '《' + result.data.origin.title + '》';
+    					info.innerHTML = result.data.origin.dynasty + '·' + result.data.origin.author + '《' + result.data.origin.title + '》';
+						biaoqian = result.data.matchTags;
+						tags.innerHTML = "Tag:" + result.data.matchTags;
   				});
 			};
-		</script>
-		<script type="text/javascript">
 			function copy_p(){
 				navigator.clipboard.writeText(shiju + xinxi).then(() => {
   					alert('已复制到剪切板，请自行粘贴');
 				});
 			};
-		</script>
-		<script>
 			function copy_t(){
 				navigator.clipboard.writeText(biaoqian).then(() => {
 					alert("已复制到剪切板，请自行粘贴");
 				});
 			};
-		</script>
-		<script type="text/javascript">
 			function search(){
 				window.open("https://so.gushiwen.cn/search.aspx?value=" + shiju + "&valuej=" + shiju.substring(0,1));
 			};
-		</script>
-		<script src="./js/NativeShare.js" charset="utf-8"></script>
-		<script>
 			function share(){
 				var Share = new NativeShare({
     				wechatConfig: {
@@ -78,22 +73,22 @@
   					syncDescToTag: false,
   					syncIconToTag: false,
   					syncTitleToTag: false,
-				})
+				});
 				Share.setShareData({
 					icon: '',
 					link: '',
 					title: '分享',
 					desc: shiju + xinxi,
 					from: '@Adpro adproqwq.xyz',
-				})
-				try {
+				});
+				try{
 					Share.call('default');
-				} catch(err){
-
+				}
+				catch(err){
+					alert('分享失败，请更换浏览器或稍后再试！');
 				}
 			}
 		</script>
-		<script src="./js/star.js"></script>
 		<div class="btn boom" onclick="copy_p();">复制诗句</div>
 		<div class="btn boom" onclick="copy_t();">复制标签</div>
 		<div class="btn boom" onclick="search();">搜索</div>
@@ -104,9 +99,9 @@
         <script type="text/javascript" src="./js/SearchPoem.js"></script>
         <div class="btn boom" onclick="SearchUserPoem();">输入并搜索</div>
         <h2>我的收藏</h2>
-		<div class="btn boom" onclick="window.open('./star.html');">我的收藏</div>
-		<h2>工具箱</h2>
-		<a href="./toolbox.html">点击跳转工具箱</a>
+		<div class="btn boom" onclick="window.open('./stared.html');">我的收藏</div>
+		<h4>开发者的另一个网站也可以来看看哦！>点击下方按钮传送</h4>
+		<button id="ad" class="btn boom" onclick="window.open('https:\/\/testlib.adproqwq.xyz');">传送</button>
 	</main>
 </body>
 </html>
