@@ -1,5 +1,5 @@
 # 站点
-1.主站：https://adproqwq.xyz
+1.主站：https://dailypoem.adproqwq.xyz
 # 公告
 即日起（2022.11.10），备用站下线，不再开启
 # 更新日志
