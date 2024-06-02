@@ -4,7 +4,7 @@ function star(poem, poem_info){
         var flag = 0;
         star = JSON.parse(self.localStorage.getItem("star"));
         for(var i = 0; i < star.stared.length; i++){
-            if(star['stared'][i] == poem + poem_info){
+            if(star.stared[i] == poem + poem_info){
                 alert("该诗句已被收藏");
                 flag = 1;
                 break;
@@ -29,8 +29,8 @@ function star(poem, poem_info){
 function removeStared(index){
     var star;
     star = JSON.parse(self.localStorage.getItem("star"));
-    star['stared'].splice(index,1);
-    console.log(star['stared']);
+    star.stared.splice(index,1);
+    console.log(star.stared);
     self.localStorage.setItem("star",JSON.stringify(star));
     getStared();
 };
@@ -38,7 +38,7 @@ function removeStared(index){
 function copyStared(index){
     var star;
     star = JSON.parse(self.localStorage.getItem("star"));
-    navigator.clipboard.writeText(star['stared'][index]).then(() => {
+    navigator.clipboard.writeText(star.stared[index]).then(() => {
         alert('已复制到剪切板，请自行粘贴');
     });
 };
@@ -50,7 +50,7 @@ function getStared(){
         for(var i = 0; i < star.stared.length; i++){
             str += `
                 <tr>
-                    <td>${star['stared'][i]}</td>
+                    <td>${star.stared[i]}</td>
                     <td><button name='copy' index=${String(i)}>复制</button><button name='remove' index=${String(i)}>删除</button></td>
                 </tr>
             `;
