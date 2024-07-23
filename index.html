@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no" />
-	<title>一诗</title>
+	<title>朝暮有诗</title>
 	<link rel="shortcut icon" href="./bitbug_favicon.ico">
 	<link rel="stylesheet" href="./style.css">
 </head>
@@ -16,9 +16,8 @@
 			<span class="close">&times;</span>
 			<p>
 				如果觉得不错的话请到Github上给本项目点个Star吧!<br><br>
-				2024.6.2：优化代码；更换地址提示<br>
-				完整更新日志请到项目查看<br>
-				dailypoem.adproqwq.xyz 即将弃用，请使用 dailypoem.adproqwq.top
+				2024.7.23：删除更换地址提示，添加重构通知<br>
+				完整更新日志请到项目查看
 			</p>
 		</div>
 	</div>
@@ -27,7 +26,7 @@
 
 	<head>
 		<p>
-			本项目即将弃用 dailypoem.adproqwq.xyz，请尽快换用 dailypoem.adproqwq.top
+			本项目即将使用Vue+ElementUI重构，敬请期待！
 			本项目调用<a href="https://www.jinrishici.com/#">今日诗词</a>API<br>
 			如没有显示诗句，请点击“换一句”<br><br>
 			目前经测试：QQ浏览器、UC浏览器正常，其它浏览器分享都会失败
@@ -75,8 +74,9 @@
 		<div class="btn boom" onclick="SearchUserPoem();">输入并搜索</div>
 		<h2>我的收藏</h2>
 		<div class="btn boom" onclick="window.open('./stared.html');">我的收藏</div>
-		<h4>开发者的另一个网站也可以来看看哦！>点击下方按钮传送</h4>
-		<button id="ad" class="btn boom" onclick="window.open('https:\/\/testlib.adproqwq.xyz');">传送</button>
+		<h4>广告</h4>
+		<button id="ad-testlib" class="btn boom" onclick="window.open('https:\/\/testlib.adproqwq.top');">TestLib</button>
+		<button id="ad-blog" class="btn boom" onclick="window.open('https:\/\/blog.adproqwq.top');">我的Blog</button>
 
 		<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
 		<script src="./js/NativeShare.js" charset="utf-8"></script>

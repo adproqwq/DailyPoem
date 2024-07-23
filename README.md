@@ -1,7 +1,7 @@
 # 站点
 
 1. 主站：https://dailypoem.adproqwq.top
-2. 即将弃用（不建议使用）：https://dailypoem.adproqwq.xyz
+2. ~~已弃用：https://dailypoem.adproqwq.xyz~~
 
 # 公告
 
@@ -10,6 +10,8 @@
 # 更新日志
 
 2022.5.28：网站上线
+
+2024.7.23：删除更换地址提示，添加重构通知
 
 2024.6.2：优化代码；更换地址提示
 
