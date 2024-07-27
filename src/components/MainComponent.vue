@@ -1,6 +1,6 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { type Dialog, type Button, type Divider, type Card, prompt } from 'mdui';
+import { type Dialog, prompt } from 'mdui';
 import load from '../utils/load';
 import copy from '../utils/copy';
 import search from '../utils/search';
@@ -47,7 +47,7 @@ export default defineComponent({
     <div>
       <p>
 				如果觉得不错的话请到Github上给本项目点个Star吧!<br><br>
-				2024.7.23：删除更换地址提示，添加重构通知<br>
+				2024.7.27：使用Vue+TypeScript+Vite+MDUI重构<br>
 				完整更新日志请到项目查看<br>
         点击其他地方关闭该弹窗
 			</p>
