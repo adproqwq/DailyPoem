@@ -1,7 +1,6 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { type Dialog } from 'mdui';
-import { prompt } from 'mdui';
+import { type Dialog, type Button, type Divider, type Card, prompt } from 'mdui';
 import load from '../utils/load';
 import copy from '../utils/copy';
 import search from '../utils/search';
