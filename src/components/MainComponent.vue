@@ -1,6 +1,6 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { type Dialog, prompt, setColorScheme } from 'mdui';
+import { type Dialog, prompt, setColorScheme, removeColorScheme } from 'mdui';
 import load from '../utils/load';
 import copy from '../utils/copy';
 import search from '../utils/search';
@@ -48,6 +48,9 @@ export default defineComponent({
         onConfirm: (value) => setColorScheme(value),
       });
     },
+    defaultColourTheme(){
+      removeColorScheme();
+    },
   },
   async mounted(){
     await load();
@@ -87,4 +90,5 @@ export default defineComponent({
   <mdui-button variant="tonal" @click="askSearch()">输入</mdui-button>
   <mdui-divider></mdui-divider>
   <mdui-button variant="tonal" @click="colourTheme()">调整配色</mdui-button>
+  <mdui-button variant="tonal" @click="defaultColourTheme()">还原</mdui-button>
 </template>
