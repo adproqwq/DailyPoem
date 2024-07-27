@@ -45,15 +45,24 @@ export default defineComponent({
           autocomplete: 'off',
           autofocus: true,
         },
-        onConfirm: (value) => setColorScheme(value),
+        onConfirm: (value) => {
+          localStorage.setItem('colourTheme', value);
+          setColorScheme(value);
+        },
       });
     },
     defaultColourTheme(){
+      localStorage.removeItem('colourTheme');
       removeColorScheme();
     },
   },
   async mounted(){
     await load();
+
+    if(localStorage.getItem('colourTheme')){
+      const colourHex = localStorage.getItem('colourTheme')!;
+      setColorScheme(colourHex);
+    }
 
     const updateLogDialog: Dialog = document.querySelector('#updateLogDialog')!;
     updateLogDialog.open = true;
