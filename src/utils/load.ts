@@ -4,6 +4,10 @@ export default async () => {
   const result = await load();
   const info = result.data.origin;
 
+  (document.querySelector('#tags')! as HTMLDivElement).childNodes.forEach((tag) => {
+    (document.querySelector('#tags')! as HTMLDivElement).removeChild(tag);
+  });
+
   (document.querySelector('#poem')! as HTMLSpanElement).textContent = result.data.content;
   (document.querySelector('#info')! as HTMLSpanElement).textContent = `${info.dynasty}·${info.author}《${info.title}》`;
 
