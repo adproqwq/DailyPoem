@@ -1,6 +1,6 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { type Dialog, prompt } from 'mdui';
+import { type Dialog, prompt, setColorScheme } from 'mdui';
 import load from '../utils/load';
 import copy from '../utils/copy';
 import search from '../utils/search';
@@ -31,7 +31,23 @@ export default defineComponent({
         },
         onConfirm: (value) => search(value),
       });
-    }
+    },
+    colourTheme(){
+      prompt({
+        headline: '调整配色',
+        description: '输入一个以#开头的16进制颜色值，自动生成一套配色',
+        confirmText: '生成',
+        cancelText: '取消',
+        closeOnEsc: true,
+        closeOnOverlayClick: true,
+        textFieldOptions: {
+          autosize: true,
+          autocomplete: 'off',
+          autofocus: true,
+        },
+        onConfirm: (value) => setColorScheme(value),
+      });
+    },
   },
   async mounted(){
     await load();
@@ -69,4 +85,6 @@ export default defineComponent({
   <mdui-divider></mdui-divider>
   <h2>诗句自助搜索</h2>
   <mdui-button variant="tonal" @click="askSearch()">输入</mdui-button>
+  <mdui-divider></mdui-divider>
+  <mdui-button variant="tonal" @click="colourTheme()">调整配色</mdui-button>
 </template>
