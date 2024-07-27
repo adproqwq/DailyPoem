@@ -1,0 +1,23 @@
+{
+  "name": "vue-example",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "farm start",
+    "start": "farm start",
+    "build": "farm build",
+    "preview": "farm preview",
+    "clean": "farm clean"
+  },
+  "dependencies": {
+    "jinrishici-ts": "^1.0.3",
+    "mdui": "^2.1.2",
+    "vue": "^3.4.0",
+    "vue-router": "^4.4.0"
+  },
+  "devDependencies": {
+    "@farmfe/cli": "^1.0.2",
+    "@farmfe/core": "^1.3.0",
+    "@vitejs/plugin-vue": "^5.0.4",
+    "core-js": "^3.30.1"
+  }
+}

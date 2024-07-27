@@ -1,7 +1,6 @@
 # 站点
 
 1. 主站：https://dailypoem.adproqwq.top
-2. ~~已弃用：https://dailypoem.adproqwq.xyz~~
 
 # 公告
 

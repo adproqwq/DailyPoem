@@ -2,88 +2,15 @@
 <html lang="zh-CN">
 
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no" />
-	<title>朝暮有诗</title>
-	<link rel="shortcut icon" href="./bitbug_favicon.ico">
-	<link rel="stylesheet" href="./style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="/favicon.ico" />
+  <title>朝暮有诗</title>
 </head>
 
 <body>
-	<!--弹窗-->
-	<div id="start" class="modal">
-		<div class="modal-content">
-			<span class="close">&times;</span>
-			<p>
-				如果觉得不错的话请到Github上给本项目点个Star吧!<br><br>
-				2024.7.23：删除更换地址提示，添加重构通知<br>
-				完整更新日志请到项目查看
-			</p>
-		</div>
-	</div>
-	<script type="text/javascript" src="./js/start_modal.js"></script>
-	<!--弹窗结束-->
-
-	<head>
-		<p>
-			本项目即将使用Vue+Material Design 3重构，敬请期待！<br>
-			本项目调用<a href="https://www.jinrishici.com/#">今日诗词</a>API<br>
-			如没有显示诗句，请点击“换一句”<br><br>
-			目前经测试：QQ浏览器、UC浏览器正常，其它浏览器分享都会失败
-		</p>
-	</head>
-	<main>
-		<div id="poem_sentence"></div>
-		<div id="poem_info"></div>
-		<div id="poem_tags"></div>
-		<script type="text/javascript">
-			function GetData() {
-				jinrishici.load(function(result) {
-					var sentence = document.querySelector("#poem_sentence");
-					var info = document.querySelector("#poem_info");
-					var tags = document.querySelector("#poem_tags");
-					shiju = result.data.content;
-					sentence.innerHTML = result.data.content;
-					xinxi = "——" + result.data.origin.dynasty + '·' + result.data.origin.author + '《' + result.data.origin.title + '》';
-					info.innerHTML = result.data.origin.dynasty + '·' + result.data.origin.author + '《' + result.data.origin.title + '》';
-					biaoqian = result.data.matchTags;
-					tags.innerHTML = "Tag:" + result.data.matchTags;
-				});
-			};
-			function copy_p() {
-				navigator.clipboard.writeText(shiju + xinxi).then(() => {
-					alert('已复制到剪切板，请自行粘贴');
-				});
-			};
-			function copy_t() {
-				navigator.clipboard.writeText(biaoqian).then(() => {
-					alert("已复制到剪切板，请自行粘贴");
-				});
-			};
-			function search() {
-				window.open("https://so.gushiwen.cn/search.aspx?value=" + shiju + "&valuej=" + shiju.substring(0, 1));
-			};
-		</script>
-		<div class="btn boom" onclick="copy_p();">复制诗句</div>
-		<div class="btn boom" onclick="copy_t();">复制标签</div>
-		<div class="btn boom" onclick="search();">搜索</div>
-		<div class="btn boom" onclick="GetData();">换一句</div>
-		<div class="btn boom" onclick="share();">分享</div>
-		<div class="btn boom" onclick="star(shiju,xinxi);">收藏</div>
-		<h2>诗句自助搜索</h2>
-		<div class="btn boom" onclick="SearchUserPoem();">输入并搜索</div>
-		<h2>我的收藏</h2>
-		<div class="btn boom" onclick="window.open('./stared.html');">我的收藏</div>
-		<h4>广告</h4>
-		<button id="ad-testlib" class="btn boom" onclick="window.open('https:\/\/testlib.adproqwq.top');">TestLib</button>
-		<button id="ad-blog" class="btn boom" onclick="window.open('https:\/\/blog.adproqwq.top');">我的Blog</button>
-
-		<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-		<script src="./js/NativeShare.js" charset="utf-8"></script>
-		<script src="./js/star.js"></script>
-		<script src="./js/SearchPoem.js"></script>
-		<script src="./js/share.js"></script>
-	</main>
+  <div id="app"></div>
+  <script src="./src/index.ts"></script>
 </body>
 
 </html>
