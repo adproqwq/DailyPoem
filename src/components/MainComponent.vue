@@ -84,9 +84,13 @@ export default defineComponent({
 
   <mdui-card variant="elevated" style="width: 400px;height: 100px">
     <div>
-      <span id="poem"></span><br>
-      <span id="info"></span><br>
-      <span id="tags"></span>
+      <div>
+        <span id="poem"></span>
+      </div>
+      <div>
+        <span id="info"></span>
+      </div>
+      <div id="tags"></div>
     </div>
   </mdui-card>
   <div>
