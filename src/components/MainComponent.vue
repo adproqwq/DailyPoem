@@ -70,12 +70,12 @@ export default defineComponent({
     },
   },
   async mounted(){
-    await load();
-
     if(localStorage.getItem('colourTheme')){
       const colourHex = localStorage.getItem('colourTheme')!;
       setColorScheme(colourHex);
     }
+
+    await load();
 
     const updateLogDialog: Dialog = document.querySelector('#updateLogDialog')!;
     updateLogDialog.open = true;
