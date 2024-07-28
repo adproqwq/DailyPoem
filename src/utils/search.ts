@@ -1,3 +1,3 @@
 export default (poem: string) => {
-  window.open(`https://so.gushiwen.cn/search.aspx?value=${poem}&valuej=${poem.substring(0, 1)}`);
+  window.open(`https://www.gushiwen.cn/search.aspx?value=${poem}&valuej=${poem.substring(0, 1)}`);
 };
