@@ -11,19 +11,20 @@
     "type-check": "vue-tsc --build --force"
   },
   "dependencies": {
-    "vue": "^3.4.29",
-    "vue-router": "^4.3.3",
     "jinrishici-ts": "^1.0.3",
-    "mdui": "^2.1.2"
+    "mdui": "^2.1.3",
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.0"
   },
   "devDependencies": {
     "@tsconfig/node20": "^20.1.4",
-    "@types/node": "^20.14.5",
-    "@vitejs/plugin-vue": "^5.0.5",
-    "@vue/tsconfig": "^0.5.1",
-    "npm-run-all2": "^6.2.0",
-    "typescript": "~5.4.0",
-    "vite": "^5.3.1",
-    "vue-tsc": "^2.0.21"
-  }
+    "@types/node": "^22.10.2",
+    "@vitejs/plugin-vue": "^5.2.1",
+    "@vue/tsconfig": "^0.7.0",
+    "npm-run-all2": "^7.0.2",
+    "typescript": "~5.7.2",
+    "vite": "^6.0.6",
+    "vue-tsc": "^2.2.0"
+  },
+  "packageManager": "pnpm@9.15.2"
 }
