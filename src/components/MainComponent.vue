@@ -88,7 +88,7 @@ export default defineComponent({
     <div>
       <p>
 				如果觉得不错的话请到Github上给本项目点个Star吧!<br><br>
-				2024.7.29：收藏功能重构上线；精简代码<br>
+				2025.1.1：添加复制成功提示<br>
 				完整更新日志请到项目查看<br>
         点击其他地方关闭该弹窗
 			</p>
